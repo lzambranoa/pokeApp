@@ -1,6 +1,12 @@
 <app-loading  *ngIf="isDataReadyList"></app-loading>
 
 <app-navbar></app-navbar>
-<div class="container-fluid">
+<div class="container-fluid my-2">
     <h1>Pokemon</h1>
+
+<div class="contenedor-cards-menu container-lg">
+    <app-cards-menu *ngFor="let pokemon of pokemones" [nombre]="pokemon.name" (click)="getInfo()"></app-cards-menu>
 </div>
+
+</div>
+<app-pagination></app-pagination>

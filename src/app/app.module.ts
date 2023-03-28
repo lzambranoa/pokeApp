@@ -8,6 +8,8 @@ import { PokeScreenComponent } from './screens/poke-screen/poke-screen.component
 import { CardsComponent } from './components/cards/cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { CardsMenuComponent } from './components/cards-menu/cards-menu.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PokeScreenComponent,
     CardsComponent,
     NavbarComponent,
+    PaginationComponent,
+    CardsMenuComponent,
   ],
   imports: [
     BrowserModule,

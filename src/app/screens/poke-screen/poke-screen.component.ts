@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonApp } from 'src/app/interfaces/pokemonNames';
+import { PokemonApp, Result } from 'src/app/interfaces/pokemonNames';
 import { PokeService } from 'src/app/services/poke.service';
 
 @Component({
@@ -12,10 +12,12 @@ export class PokeScreenComponent implements OnInit {
   constructor(private pokeService: PokeService) { }
 
   public isDataReady?: PokemonApp[]
+  public pokemones: Result[] = []
 
   ngOnInit(): void {
 
     this.getListPokemon();
+    console.log(this.isDataReady?.values)
   }
 
   get isDataReadyList() {
@@ -24,9 +26,13 @@ export class PokeScreenComponent implements OnInit {
 
   getListPokemon() {
     return this.pokeService.getPokemonList()
-      .subscribe(resp => {
-        console.log(resp)
+      .subscribe((resp) => {
+        this.pokemones = resp.results;
       })
+  }
+
+  getInfo() {
+    console.log("Hola leo")
   }
 
 }
